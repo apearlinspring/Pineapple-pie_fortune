@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>趣味运势抽签</title>
+    <style>
+        body {
+            font-family: '楷体', cursive;
+            background: linear-gradient(45deg, #f4d03f, #16a085);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: #c0392b;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        #qianTong {
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #qianTong:hover {
+            transform: scale(1.1);
+        }
+
+        #result {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            margin-top: 30px;
+            max-width: 500px;
+            display: none;
+        }
+
+        .qianwen {
+            font-size: 24px;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .explanation {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>未来运势抽签-嘉怡明天做什么</h1>
+        <button onclick="drawQian()">点击抽签</button>
+        <div id="result">
+            <div class="qianwen" id="qianText"></div>
+            <div class="explanation" id="explanationText"></div>
+        </div>
+    </div>
+
+    <script>
+        const qianwenList = [
+            {
+                text: "大吉：会莫名其妙的享清福",
+                explanation: "意想不到的好运会悄悄降临，躺平也能收获惊喜"
+            },{
+                text: "大吉：立刻收到想要的offer",
+                explanation: "邮箱即将迎来职业生涯最动听的提示音"
+            },{
+                text: "隐藏：会有人愿意接受你的所有",
+                explanation: "包括你收藏的奇怪表情包和半夜突然的哲学思考以及哪怕是你阴戳戳的想法都可以告诉我的啦"
+            },{
+                text: "隐藏：只需发个wxn暗示一下，喜欢的人就会第二天出现在你面前",
+                explanation: "（请谨慎使用此技能，系统不保证出现时机的合理性，但会尽量避开已知的你的忙碌时间）"
+            },{
+                text: "中吉：路上捡到一百元钱",
+                explanation: "但可能要以帮邻居带娃三小时的方式完成因果循环（开玩笑的啦（））"
+            },{
+                text: "小吉：明天吃到的东西会特别好吃",
+                explanation: "不论在哪都能吃出米其林探店的神秘体验"
+            },{
+                text: "大吉：无痛瘦十斤且永远吃不胖",
+                explanation: "一次抽签无限畅吃"
+            },
+            {
+                text: "中吉：所有的学生都不会惹你生气",
+                explanation: "最皮的孩子都自动开启乖巧模式"
+            },
+            {
+                text: "小吉：明天会收到意想不到的人发来的消息",
+                explanation: "可能是十年前借你橡皮的人突然说要请你吃顿饭"
+            },
+            {
+                text: "末吉：明天一天心情不会降到平静以下",
+                explanation: "情绪稳定得就像开了恒温器"
+            },
+            {
+                text: "凶：会遇到热情的推销员",
+                explanation: "请准备好应对突如其来的关心"
+            }
+        ];
+
+        function drawQian() {
+            const resultDiv = document.getElementById('result');
+            const qianText = document.getElementById('qianText');
+            const explanText = document.getElementById('explanationText');
+            
+            // 添加摇晃动画
+            resultDiv.style.animation = 'none';
+            setTimeout(() => {
+                resultDiv.style.animation = 'shake 0.5s';
+            }, 10);
+
+            // 随机选择签文
+            const randomIndex = Math.floor(Math.random() * qianwenList.length);
+            const selected = qianwenList[randomIndex];
+
+            // 显示结果
+            qianText.textContent = selected.text;
+            explanText.textContent = selected.explanation;
+            resultDiv.style.display = 'block';
+        }
+    </script>
+
+    <style>
+        @keyframes shake {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(10px); }
+            50% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</body>
+</html>
