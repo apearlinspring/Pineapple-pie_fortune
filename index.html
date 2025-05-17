@@ -7,11 +7,11 @@
         body {
             font-family: '楷体', cursive;
             background: linear-gradient(45deg, #f4d03f, #16a085);
-            min-height: 100vh;
+            min-height: 200vh;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 40px;
         }
 
         .container {
@@ -20,13 +20,13 @@
 
         h1 {
             color: #c0392b;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.3);
         }
 
         #qianTong {
-            width: 200px;
-            height: 200px;
-            margin: 20px;
+            width: 400px;
+            height: 400px;
+            margin: 40px;
             cursor: pointer;
             transition: transform 0.3s;
         }
@@ -37,32 +37,32 @@
 
         #result {
             background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 40px;
+            border-radius: 20px;
             box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            margin-top: 30px;
-            max-width: 500px;
+            margin-top: 60px;
+            max-width: 1000px;
             display: none;
         }
 
         .qianwen {
-            font-size: 24px;
+            font-size: 48px;
             color: #2c3e50;
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         .explanation {
             color: #7f8c8d;
-            font-size: 16px;
+            font-size: 32px;
         }
 
         button {
-            padding: 12px 24px;
-            font-size: 18px;
+            padding: 24px 48px;
+            font-size: 36px;
             background-color: #e74c3c;
             color: white;
             border: none;
-            border-radius: 25px;
+            border-radius: 50px;
             cursor: pointer;
             transition: background-color 0.3s;
         }
@@ -74,7 +74,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>未来运势抽签-嘉怡明天做什么</h1>
+        <h1>未来运势抽签-菠萝派派派的明日</h1>
         <button onclick="drawQian()">点击抽签</button>
         <div id="result">
             <div class="qianwen" id="qianText"></div>
@@ -88,39 +88,36 @@
                 text: "大吉：会莫名其妙的享清福",
                 explanation: "意想不到的好运会悄悄降临，躺平也能收获惊喜"
             },{
-                text: "大吉：立刻收到想要的offer",
-                explanation: "邮箱即将迎来职业生涯最动听的提示音"
+                text: "大吉：允许享受在床上躺一天，饭有人喂，衣服有人洗，东西有人收拾的全方位保姆生活",
+                explanation: "激活懒人终极形态：床头长出自动投喂机，脏衣篮开启空间传送，外卖永远比预计早到10分钟"
             },{
-                text: "隐藏：会有人愿意接受你的所有",
-                explanation: "包括你收藏的奇怪表情包和半夜突然的哲学思考以及哪怕是你阴戳戳的想法都可以告诉我的啦"
+                text: "隐藏：会有人愿意永远在心里给你留一个位置",
+                explanation: "从上世纪一直到下世纪"
             },{
-                text: "隐藏：只需发个wxn暗示一下，喜欢的人就会第二天出现在你面前",
-                explanation: "（请谨慎使用此技能，系统不保证出现时机的合理性，但会尽量避开已知的你的忙碌时间）"
-            },{
-                text: "中吉：路上捡到一百元钱",
-                explanation: "但可能要以帮邻居带娃三小时的方式完成因果循环（开玩笑的啦（））"
+                text: "中吉：走在路上会捡到一百元钱",
+                explanation: "可得请我一杯奶茶做酬劳（doge）"
             },{
                 text: "小吉：明天吃到的东西会特别好吃",
                 explanation: "不论在哪都能吃出米其林探店的神秘体验"
             },{
-                text: "大吉：无痛瘦十斤且永远吃不胖",
-                explanation: "一次抽签无限畅吃"
+                text: "大大吉：永远不会再遇到傻逼",
+                explanation: "检测到降智生物就会自动将其进行物理拉黑"
             },
             {
-                text: "中吉：所有的学生都不会惹你生气",
-                explanation: "最皮的孩子都自动开启乖巧模式"
+                text: "中吉：所有的模特都会与你友好沟通",
+                explanation: " 且你的摄影力会极度爆棚，如坐火箭般进步"
             },
             {
-                text: "小吉：明天会收到意想不到的人发来的消息",
-                explanation: "可能是十年前借你橡皮的人突然说要请你吃顿饭"
+                text: "小吉：明天不会有触发洁癖的事件发生",
+                explanation: "获得24小时洁癖免触发护盾，世界将自动过滤喷嚏声和可疑液体，请放心呼吸"
             },
             {
                 text: "末吉：明天一天心情不会降到平静以下",
                 explanation: "情绪稳定得就像开了恒温器"
             },
             {
-                text: "凶：会遇到热情的推销员",
-                explanation: "请准备好应对突如其来的关心"
+                text: "凶：会遇到热情可爱的小狗小猫",
+                explanation: "小心把它惹毛了用毛毛电你"
             }
         ];
 
